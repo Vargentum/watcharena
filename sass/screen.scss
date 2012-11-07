@@ -1,0 +1,351 @@
+@charset "utf-8";
+@import "compass/reset";
+
+@import "h5bp";
+@include h5bp-display;
+@include h5bp-selection;
+@include h5bp-chromeframe;
+@include h5bp-media;
+@include h5bp-base;
+@include h5bp-typography;
+@include h5bp-figures;
+@include h5bp-forms;
+@include h5bp-embeds;
+@include h5bp-tables;
+@include h5bp-helpers;
+//@include h5bp-links;
+//@include h5bp-lists;
+
+@import "compass";
+@import "compass/layout/sticky-footer";
+
+//SPRITING
+//@import "/*.png";
+
+//border-box-sizing for all elems
+*{@include box-sizing(border-box);}
+input[type=search]{@include box-sizing(border-box);}
+
+
+
+/*FONT
+---------------------------------------------------------*/
+//base font vars
+$baseFontFamily: "PT Sans", Arial, "Helvetica CY", "Nimbus Sans L", sans-serif;
+$baseFontSize:14px;
+$baseLineHeight: 1.4;
+$baseFontColor: #585858;
+//another fonts
+//$addFont:;
+//$titleFont:;
+
+//font embeding
+@each $font-face in
+galsc-webfont,
+galsc-bold-webfont,
+galsc-bolditalic-webfont,
+galsc-italic-webfont{
+ @font-face {
+   font-family: $font-face; font-style: normal; font-weight: normal;
+   src: url('../fonts/#{$font-face}.eot');
+   src: url('../fonts/#{$font-face}.eot?#iefix') format('embedded-opentype'),
+   url('../fonts/#{$font-face}.woff') format('woff'),
+   url('../fonts/#{$font-face}.ttf')  format('truetype');
+ }
+}
+
+
+/*MEDIA mixins
+---------------------------------------------------------*/
+@mixin respond-to($media) {
+  @if $media == handhelds {
+    @media only screen and (max-width: 479px) { @content; }
+  }
+  @else if $media == wide-handhelds {
+    @media only screen and (min-width: 480px) and (max-width: 767px) { @content; }
+  }
+  @else if $media == tablets {
+    @media only screen and (min-width: 768px) and (max-width: 959px) { @content; }
+  }
+}
+
+
+/*HELPER CLASSES
+---------------------------------------------------------*/
+//floats
+.float_lt{float: left;}
+.float_rt{float: right;}
+//pseudo elems mixin
+.pseudoBlockAbs{
+  content: '';
+  display: block;
+  position: absolute;
+}
+//vertical centering mixin
+.vCtr{
+  display: table-cell;
+  height: inherit;
+  vertical-align: middle;
+}
+//base horisontal mixin
+.hList{&>*{@include inline-block;}}
+.hList_top{
+  &>*{@include inline-block; vertical-align: top;}
+}
+//justify list mixin
+.jList{
+  text-align: justify;
+  line-height: 0;
+  font-size: 1px;
+  text-justify: newspaper;
+  zoom:1;
+  text-align-last: justify;
+  &:after{
+    content: "";
+    display: inline-block;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+    width: 100%;
+  }
+  >*{
+    text-align: left;
+    @include inline-block;
+    line-height: $baseLineHeight;font-size: $baseFontSize;
+  }
+}
+.jList_top{
+  @extend .jList;
+  >*{vertical-align: top;}
+}
+//mixin for elems in string which full all parent container
+.fList{
+  .flexbox &{
+    @include display-box;
+    @include box-pack(justify);
+    &>*{@include box-flex(1);}
+  }
+  .no-flexbox &{@extend .jList;}
+}
+
+//hack for ie9 - need for gradient backgrounds
+:root .gradient {filter: none \0/IE9; }
+.ie9-gradient-support{$experimental-support-for-svg: true; @extend .gradient;}
+
+/*DEFAULT STYLES
+--------------------------------------------*/
+.h1{font-size: 2em;margin: 0.67em 0;}
+.h2{font-size: 1.5em;margin: 0.83em 0;}
+.h3{font-size: 1.17em;margin: 1em 0;}
+.h4{font-size: 1em;margin: 1.33em 0;}
+.h5{font-size: 0.83em;margin: 1.67em 0;}
+.h6{font-size: 0.75em;margin: 2.33em 0;}
+.ul{margin: 1em 0;padding: 0 0 0 40px;}
+.ol{margin: 1em 0;padding: 0 0 0 40px;}
+.defaultCss{
+  h1{@extend .h1;}
+  h2{@extend .h2;}
+  h3{@extend .h3;}
+  h4{@extend .h4;}
+  h5{@extend .h5;}
+  h6{@extend .h6;}
+  ul{@extend .ul;}
+  ol{@extend .ol;}
+}
+input{}
+textarea{}
+radio{}
+checkbox{}
+button{border:none;}
+//LINKS -----------------------------------
+$linkDefaultColor:#585858;
+$linkHoverColor:#ed1f3f;
+$linkActiveColor:#ed1f3f;
+$linkVisitedColor:#585858;
+$linkFocusedColor:#ed1f3f;
+a{
+  @include link-colors($linkDefaultColor, $linkHoverColor, $linkActiveColor, $linkVisitedColor, $linkFocusedColor);
+  @include single-transition(all,.4s,ease,0s);
+  &.active{color:$linkHoverColor;}
+  &:focus {outline: thin dotted;}
+  &:active,&:hover {outline: 0;}
+}
+@mixin link-hover_focus($property, $value) {&:hover, &:active, &:focus {#{$property}: $value;}}
+@mixin link-active($property, $value) {&:hover, &:active, &:focus {#{$property}: $value;}}
+@mixin link-simple-colors($startColor, $behaviorColor){@include link-colors($startColor,$behaviorColor,$startColor, $startColor, $behaviorColor);}
+@mixin link-dotted-simple-colors($startColor, $behaviorColor){
+  @include link-colors($startColor,$behaviorColor,$startColor, $startColor, $behaviorColor);
+  border-bottom: 1px dotted $startColor;
+  &:hover,&:focus{border-bottom-color: $behaviorColor;}
+}
+
+/*LAYOUT
+----------------------------------------------------------*/
+//layout vars
+$baseWidth: 960px;
+//$baseMinWidth: 980px;
+//$baseMaxWidth: 1280px;
+$ftrHeight:290px;
+//color vars
+$titleColor:blue;
+$attentionColor:#ed1f3f;
+$servColor:grey;
+$bodyColor: #fff;
+
+html, button, input, select, textarea {
+  height: 100%;
+  font-family: $baseFontFamily;
+  color: $baseFontColor;
+}
+body {
+  height: 100%;
+  font-size: $baseFontSize;
+  line-height: $baseLineHeight;
+  background: url(../images/bg-body.png) 50% 0 no-repeat, url(../images/bg-body_bottom.png) 50% 100% no-repeat;
+}
+@include sticky-footer($ftrHeight, ".page-body", ".help-footer_block", ".page-footer");
+.page-body{
+  width: $baseWidth;
+  margin-left:auto;
+  margin-right: auto;
+  position: relative;
+  &:before{
+    @extend .pseudoBlockAbs;
+    height: 100%;
+    width: 37px;
+    top:10px;
+    left:-50px;
+    background-repeat: repeat-y;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACUAAAAWCAMAAABwrqUyAAAAe1BMVEXPz8/t7e3Nzc329vbOzs7Dw8O+vr7CwsLq6uq/v7/5+fmxsbGvr6+8vLy9vb339/fBwcHAwMDu7u7s7OysrKzp6emqqqqurq7MzMz4+Pjr6+vHx8fExMStra2oqKjLy8urq6vFxcUAAACkpKSmpqbGxsb8/PylpaWEhIThPuNyAAAAKHRSTlOrq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urq6urAKurq6urqqdJ0wAAAUtJREFUeNpFkIdywzAMQ9OZjqRJW4+0zrAiSsz/f2EB0LXps0/EPQE0V7fr9WooN/fsp/XZdHCHog+aRpQLgza2JZ0zdJG8mi372IK6gYJCp7YO5Qg3eOmWvn1bRZkY619qLQVunrOJI3n6rTXmUkiDlhTdmCg3QUFJQEtKGN2ynEKd5+rZihKGTDNBM0XoW63mwvt0dtaJ6pyYN1OLf0xLKK8ulPd3auQlKgGzzReEJfFdbVADKWGhLtSqi//mRrh3HbePHc8qJZYDMCqEzbTR7QNUiLoqaij3Hfosj8yTfeww4mF0k6xEzHEZfdpjQD+1SrXMzYlKJRFTyeoZEChivBqJKRXaawhyr29VlFRY2TQXSm6qTzih/lXzSIxVpgOmwCNoWfClsTxRhFKCm+X9TkwkCusiMbpB9ns6qRa1mSn6w+0oSCX/cPsDt5Fu8sH7G3wAAAAASUVORK5CYII=);
+    .ie87 &{background-image: url(../images/convertedToData/bg-body__gilushe_lt.png);}
+  }
+}
+.page-width{
+  width:$baseWidth;
+  margin-left:auto;
+  margin-right: auto;
+}
+.columnize_2{.csscolumns &{@include columns($baseWidth/2 2);}}
+
+/*OBJECTS
+--------------------------------------------*/
+@mixin border-1-solid($dir){border-#{$dir}:1px solid $borderColor;}
+
+/*HEADER elements styles
+---------------------------------------------*/
+.page-header{padding: 25px 0 0;}
+.page-header__top{@extend .jList;}
+.page-header__lang{}
+.page-header__warranty{font-style: italic;}
+.page-header__currency{}
+.page-header__search{
+  position:relative;
+  input{
+    width:160px;
+    height: 20px;
+    @include border-radius(15px);
+    border:1px solid #eee;
+    box-shadow: 0 -1px 0 #c3c3c3;
+    font-size: 12px;
+    color:#b5b5b5;
+    padding:0 10px 0 25px;
+  }
+  button{
+    position: absolute;
+    top:50%;
+    left:5px;
+    margin-top: -6px;
+    width:17px;
+    height: 12px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAMCAMAAACz+6aNAAAAb1BMVEXh4eHf39/Y2NjZ2dnx8fHi4uLR0dHHx8fDw8Pz8/Pv7+/39/fg4ODU1NTGxsbl5eX5+fnm5ubb29ve3t7FxcXJycn19fX8/PzLy8u+vr77+/v4+PjKysr29vbw8PD+/v79/f3r6+vAwMC7u7v////vTWTuAAAAgUlEQVR42kXL1xKEIBBEUTYHsxgACYM9//+NC5a692WqTvUIKqTS6lLwkXAVcpU7RcKWvhwhT7EQrWkfsOEQDUdMDpr+myadBpbimouih+pMp3AjjhlY3J/YGhZOFNPX7PtRj9cBdSZOwvMyfSbna7wSbcIhUAjGD+9plz3jvzPnfugnF5+4KIb4AAAAAElFTkSuQmCC);
+    .ie87 &{background-image: url(../images/convertedToData/page-header__search__button.png);}
+  }
+}
+.page-header__favorites{
+  position: relative;
+  font-weight: bold;
+  text-decoration: none;
+  @include link-dotted-simple-colors(#393939, $linkHoverColor);
+  margin:0 10px 0 25px;
+  &:before{
+    @extend .pseudoBlockAbs;
+    width:21px; height: 21px;
+    left:-23px;
+    top:0;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAMAAACeyVWkAAACRlBMVEW/YgD52lm9WgDBbADv2Hj/5XvTYAHGZgHGXgHitAH7zxrwxRHgugD853PPrADGbwH/zwr/5XrViADxbgL/60XGnQD/cAj/gUb/8kK7mgD/4GP/2kP/+nH//kX/a0LBFQDGCgHdjwHGZgG4UADGbwHCXAD4HwHFCQDGqADGowD/3lb/zTTGdwH//0u+CQD//1/JiQC+IwDGFgHGXgHGVgHGZgHGBQH//1fGJQHGgAHGUAG7IwDGFgHGSAG9FQDGFgHGNgHGJQHGCgHGFgHACQDGCgHGBQEAAAD/wjL/0Xv/4H//w1H/uDL0kAH/1G7RXgH/3Ij/yk3/2oH/rRH6igL/kB//ohb/2pP+jgL/3nr/35L/5n7/4YP/3o7/kTHzhAL/jBb/qyv/4ID6dQLppwH/rxf/xAz9ywHrtQDtlQH+wAHhsgH/zVf/xDf/vR//0UL3wwH/wS7/zzn/1FH/0D3HZgH/zFL/43L/ykz/337/exvpcQLSaAH/fQvVdAH/sR//1zL3zgH/vB3/3yvlwAD/ymXjgAH/43PMYwHIaAH/tQT/52L/7Er/6Cb/633/7x3GnQD/1VL/ohX451H/11v/9nzyZAL/VAX6agLfYQL/iVL1NQLRTwHjRALRPAH/mX3FFQD/+V3u6WzOXAHuzm3/00raZQH//l3PTgHVWgHgYgLMVAHTWAHCTgDcVgHeWALhQwLoMALriAH/3G78pAHmjgHGbwHGdwHGUAHGSAHYVAHiRALGZgHGFgHGVgHGNgHGJQHGXgF5U5o9AAAASHRSTlPFttK28YEaCA2ArOgMq/gEeE6mJCBmRWWM4h5IEXGFuC0Bnv6OsKelTAQXXH4HyZz0zDwDBgEUAXQ5A+FOHtABPl4+frycFQDzlXWpAAABK0lEQVR42m3OY3PEUBiG4dS2bds2Utu2bdu2bWONpDn5Z02705OZ3d4fzpy5PrzzICgsgP7S6ubxn5rdO0qq6dWlkZOEGu6ub+iJq+72yuqMuqqYqq0tT082K9FqrCUnJVvcPz/RUd+goqxp4kypy81OVRKTWVgy2FPX1d1e07R56xmEWGlzEzLTsjKKSgc6+1pa26aWuK7UBQ0ZDis7JTkxf3a8ltXIZnNsf+8qIBiDkZpXuTU31ostYtZ+og2K0mROQfkISbVA2vn8LZNPz60Y/qK6vrPxhXt1qstGD3m855fHp9dgqPoHQ3sn/AfBm+CdHwbV4Gj/9IwgCKHwg4iEan5+DIBXYAgAnyAKqj1+YeGNohGh4TgeA9XdwRIVFR0bB9UfpYv/eb4BI6ea5wqSOAwAAAAASUVORK5CYII=);
+    .ie87 &{background-image: url(../images/convertedToData/page-header__favorites.png);}
+  }
+}
+.page-header__purchases{
+  @extend .page-header__favorites;
+  &:before{
+    left:-24px;
+    background-image: url(data:image/png;base64,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);
+    .ie87 &{background-image: url(../images/convertedToData/page-header__purchases.png);}
+    width:22px; height: 30px;
+    top:-5px;
+  }
+}
+.page-header__purchases{}
+.page-header__logo{
+  .name{@include hide-text;}
+}
+.page-header__nav{
+  ul{
+    @extend .hList;
+    //@extend .fList;
+  }
+  .unit{}
+}
+
+/*FOOTER elements styles
+---------------------------------------------*/
+.page-footer{
+  position: relative;
+  width: $baseWidth;
+  margin-left: auto;
+  margin-right: auto;
+  //min-width: $baseMinWidth;
+  //max-width: $baseMaxWidth;
+}
+.page-footer__logo{
+  .name{@include hide-text;}
+}
+.page-footer__nav{
+  ul{@extend .hList;}
+  .unit{}
+}
+.page-footer__copy{}
+
+
+/*independent blocks
+-----------------------------------------------------------------------------------------------*/
+.b-crumbs{
+  ul{@extend .hList;}
+  .unit{}
+}
+
+
+/*INDEX page specific elements styles
+-----------------------------------------------------------------------------------------------*/
+
+/*SOME page specific elements styles
+------------------------------------------------------------------------------------------------*/
+/*SOME page specific elements styles
+------------------------------------------------------------------------------------------------*/
+
+/*PLUGINS styles
+------------------------------------------------------------------------------------------------*/
+
+/*DIRTY HACKS
+------------------------------------------------------------------------------------------------*/
+
+//debug
+//* { outline: 2px dotted red; }
+//* * { outline: 2px dotted green; }
+//* * * { outline: 2px dotted orange; }
+//* * * * { outline: 2px dotted blue; }
+//* * * * * { outline: 1px solid red; }
+//* * * * * * { outline: 1px solid green; }
+//* * * * * * * { outline: 1px solid orange; }
+//* * * * * * * * { outline: 1px solid blue; }
