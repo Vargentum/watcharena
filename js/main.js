@@ -26,4 +26,7 @@ $(function(){
 //            columns: columnCount
 //        });
 //    }
+    $('.favorites__large').click(function(){
+        $(this).toggleClass('active');
+    });
 });

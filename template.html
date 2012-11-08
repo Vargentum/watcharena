@@ -16,8 +16,6 @@
   <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <!--PT Serif-->
   <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-  <!--PT Serif Caption-->
-  <link href='http://fonts.googleapis.com/css?family=PT+Serif+Caption&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <!--CSS here-->
   <link rel="stylesheet" href="stylesheets/screen.css">
   <script src="js/vendor/modernizr-2.6.1.min.js"></script>
@@ -97,12 +95,19 @@
         <a href="#" class="link">Не смогли дозвониться?</a>
       </address>
     </div>
-
-
   </header><!--END HEADER-->
 
   <!--START page template-->
-  <div class="page-template" role="main"></div><!--END page template-->
+  <div class="page-template" role="main">
+    <!--breadcrumbs-->
+    <div class="page-template__crumbs" itemprop='breadcrumbs'>
+      <a class="unit" href="#"><span class="unit__content">Хлебные</span></a>
+      <a class="unit" href="#"><span class="unit__content">Крошки</span></a>
+    </div>
+    <!--main header-->
+    <!--**-->
+    <header class="page-template__title">Заголово</header>
+  </div><!--END page template-->
 
   <!--left sidebar-->
   <aside class="page-sidebar" itemscope itemtype='http://schema.org/WPSideBar'>
