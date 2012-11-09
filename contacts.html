@@ -98,47 +98,44 @@
   </header><!--END HEADER-->
 
   <!--START page template-->
-  <div class="page-template page-blog" role="main" itemscope itemtype='http://schema.org/Blog'>
-    <!--main header-->
-    <header class="page-template__title">Блог</header>
-    <!--blog post-->
-    <article class="page-blog__post" itemprop='blogPost' itemscope itemtype='http://schema.org/BlogPosting'>
-      <header class="header">
-        <time datetime="2012-12-21">21 января 2012</time>
-        <a href="#" class="name" itemprop='url'><span itemprop='name'>Hautlence HL Classic</span></a>
-      </header>
-      <div class="defaultCss" itemprop='articleBody'>
-        <p>В 2011 году Blancpain расширит коллекцию Villeret начатого в этом году новой моделью. Часы Villeret Timezone 30 minutes Demi-Savonnette будут весьма кстати путешественнику в тех странах, где время часового пояса изменяется на полчаса. Несколько поворотов заводной головки достаточно чтобы скорректировать время второго часового пояса или дату. А кнопка, интегрированная в заводную головку, служит для выбора режима коррекции, его индикатор на «4 часах»: D — дата, T —режим перевода времени на Гринвичевское. Кроме того, это время синхронизировано с «домашним» и изменяется при его коррекции. Индикатор день/ночь относится к «домашнему» времени.</p>
-        <p>Механизм автоматический, калибр 5254DF, имеет запас хода 72 часа и состоит из 321 компонента из них 32 камня. Корпус 12,12 мм высотой и 40 мм в диаметре из 18-каратного красного золота, опаловый циферблат с гильошированием, накладные метки из золота, сапфировые стекла и водостойкость 30 метров.</p>
-        <img src="images/tmp/photo_red_border.png" alt="">
-        <img src="images/tmp/photo_red_border.png" alt="">
-      </div>
-    </article>
-    <!--blog post-->
-    <article class="page-blog__post" itemprop='blogPost' itemscope itemtype='http://schema.org/BlogPosting'>
-      <header class="header">
-        <time datetime="2012-12-21">21 января 2012</time>
-        <a href="#" class="name" itemprop='url'><span itemprop='name'>Hautlence HL Classic</span></a>      </header>
-      <div class="defaultCss" itemprop='articleBody'>
-        <p>Механизм автоматический, калибр 5254DF, имеет запас хода 72 часа и состоит из 321 компонента из них 32 камня. Корпус 12,12 мм высотой и 40 мм в диаметре из 18-каратного красного золота, опаловый циферблат с гильошированием, накладные метки из золота, сапфировые стекла и водостойкость 30 метров.
-      </div>
-      <div class="read_later"><a href="#">Читать дальше</a></div>
-    </article>
-    <!--blog post-->
-    <article class="page-blog__post" itemprop='blogPost' itemscope itemtype='http://schema.org/BlogPosting'>
-      <header class="header">
-        <time datetime="2012-12-21">21 января 2012</time>
-        <a href="#" class="name" itemprop='url'><span itemprop='name'>Hautlence HL Classic</span></a>      </header>
-      <div class="defaultCss" itemprop='articleBody'>
-        <p>Механизм автоматический, калибр 5254DF, имеет запас хода 72 часа и состоит из 321 компонента из них 32 камня. Корпус 12,12 мм высотой и 40 мм в диаметре из 18-каратного красного золота, опаловый циферблат с гильошированием, накладные метки из золота, сапфировые стекла и водостойкость 30 метров.
-      </div>
-      <div class="read_later"><a href="#">Читать дальше</a></div>
-    </article>
-    <!--pagination-->
-    <div class="page-template__pagination">
-      <a href="#" class="unit unit__prev">Раньше</a>
-      <a href="#" class="unit unit__next">Дальше</a>
+  <div class="page-template page-contacts" role="main">
+    <!--breadcrumbs-->
+    <div class="page-template__crumbs" itemprop='breadcrumbs'>
+      <a class="unit" href="#"><span class="unit__content">Хлебные</span></a>
+      <a class="unit" href="#"><span class="unit__content">Крошки</span></a>
     </div>
+    <!--main header-->
+    <header class="page-template__title">Связь с нами</header>
+    <!--content-->
+    <div class="hList_top">
+      <!--telephones-->
+      <address class="page-contacts__unit">
+        <header class="title">Наши телефоны</header>
+        <p>+7 (495) 410-92-84 (В Москве) с 12:00 до 20:00</p>
+        <p>+41 (43) 500-61-18 (В Цюрихе) с 10:00 до 17:00</p>
+      </address>
+      <!--fax-->
+      <address class="page-contacts__unit">
+        <header class="title">Наш факс в Цюрихе</header>
+        <p>+41 (44) 575-30-55</p>
+      </address>
+    </div>
+    <!--form-->
+    <form class="page-contacts__form">
+      <div class="jList">
+        <input type="text" placeholder="Ваше имя">
+        <input type="email" placeholder="Электронная почта">
+      </div>
+      <textarea placeholder="Сообщение нам"></textarea>
+      <button type="submit" class="button">Отправить</button>
+    </form>
+    <!--map-->
+    <figure class="page-contacts__map">
+      <figcaption class="caption">Наш адрес в Москве</figcaption>
+      <div class="map" id="map">
+        <iframe width="609" height="369" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com.ua/maps?f=q&amp;source=s_q&amp;hl=ru&amp;geocode=&amp;q=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%B2%D0%BA%D0%B0+5&amp;aq=t&amp;gl=ua&amp;ie=UTF8&amp;hq=&amp;hnear=%D1%83%D0%BB.+%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%B2%D0%BA%D0%B0,+5,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F&amp;ll=55.758795,37.640876&amp;spn=0.009599,0.033023&amp;t=m&amp;z=14&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com.ua/maps?f=q&amp;source=embed&amp;hl=ru&amp;geocode=&amp;q=%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+%D1%83%D0%BB%D0%B8%D1%86%D0%B0+%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%B2%D0%BA%D0%B0+5&amp;aq=t&amp;gl=ua&amp;ie=UTF8&amp;hq=&amp;hnear=%D1%83%D0%BB.+%D0%9F%D0%BE%D0%BA%D1%80%D0%BE%D0%B2%D0%BA%D0%B0,+5,+%D0%9C%D0%BE%D1%81%D0%BA%D0%B2%D0%B0,+%D0%A0%D0%BE%D1%81%D1%81%D0%B8%D1%8F&amp;ll=55.758795,37.640876&amp;spn=0.009599,0.033023&amp;t=m&amp;z=14" style="color:#0000FF;text-align:left">Просмотреть увеличенную карту</a></small>
+      </div>
+    </figure>
   </div><!--END page template-->
 
   <!--left sidebar-->

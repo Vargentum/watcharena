@@ -12,9 +12,12 @@
   <!--if you make responsive design - uncomment it-->
   <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
   <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--PT Sans-->
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <!--PT Serif-->
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
   <!--CSS here-->
   <link rel="stylesheet" href="stylesheets/screen.css">
-  <!--CSS here-->
   <script src="js/vendor/modernizr-2.6.1.min.js"></script>
 </head>
 <body itemscope itemtype='http://schema.org/WebPage'>
@@ -24,45 +27,226 @@
 <div class="page-body">
 
   <!-- HEADER -->
-  <header class="page-header" itemscope itemtype='http://schema.org/WPHeader'>
-    <!--logo-->
-    <a class="page-header__logo" href="index.html" itemprop='url'>
-      <img src="images/logo.png" alt="" itemprop='image'>
-      <span class="name" itemprop="name"></span>
-    </a>
-    <!--navigation-->
-    <nav class="page-header__nav" itemscope itemtype='http://schema.org/SiteNavigationElement'>
-      <ul>
-        <li><a href="#" class="unit active"></a></li>
-        <li><a href="#" class="unit"></a></li>
-      </ul>
-    </nav>
+  <header class="page-header page-header__indexPage_modification" itemscope itemtype='http://schema.org/Store'>
+    <!--top header part-->
+    <div class="page-header__top">
+      <!--lang choise-->
+      <div class="page-header__lang">
+        <a href="#" class="unit unit-1">English</a>
+        <a href="#" class="unit unit-2">Russian</a>
+      </div>
+      <!--warranty-->
+      <a href="#" class="page-header__warranty">Гарантия и оригинальность</a>
+      <!--currency choise-->
+      <div class="page-header__currency">
+        <span class="content">Цены в</span>
+        <select>
+          <option>$</option>
+          <option>€</option>
+          <option>R</option>
+        </select>
+      </div>
+      <!--search-->
+      <form class="page-header__search">
+        <input type="search" placeholder="Поиск">
+        <button type="submit"></button>
+      </form>
+      <div class="hList">
+        <!--favorites-->
+        <a href="#" class="page-header__favorites">118</a>
+        <!--purchases-->
+        <a href="#" class="page-header__purchases">57</a>
+      </div>
+      <!--user block-->
+      <div class="page-header__user">
+        <a href="#" class="login">Войти</a>
+        или
+        <a href="#" class="register">Зарегистрироваться</a>
+      </div>
+    </div>
+    <!--bottom header part-->
+    <div class="page-header__bottom">
+      <!--logo-->
+      <a class="page-header__logo" href="index.html" itemprop='url'>
+        <img src="images/header__logo.png" alt="" itemprop='image'>
+        <span class="name" itemprop="name">WatchArena</span>
+      </a>
+      <!--navigation-->
+      <nav class="page-header__nav" itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <ul class="columnize_2">
+          <li><a href="#" class="unit">Главная</a></li>
+          <li><a href="#" class="unit current">Спецпредложения</a></li>
+          <li><a href="#" class="unit">Часы</a></li>
+          <li><a href="#" class="unit">Часы б/у</a></li>
+          <li><a href="#" class="unit">Блог</a></li>
+          <li><a href="#" class="unit">Связь с нами</a></li>
+        </ul>
+      </nav>
+      <!--contacts-->
+      <address class="page-header__contacts">
+        <div class="jList">
+          <span class="telephone" itemprop='telephone'>+7 (495) 410-92-84</span>
+          <span class="openingHours" itemprop='openingHours'>12:00—20:00</span>
+        </div>
+        <div class="jList">
+          <span class="telephone" itemprop='telephone'>+41 (43) 500-61-18</span>
+          <span class="openingHours" itemprop='openingHours'>10:00—17:00</span>
+        </div>
+        <a href="#" class="link">Не смогли дозвониться?</a>
+      </address>
+    </div>
   </header><!--END HEADER-->
 
-
-
   <!--START page template-->
-  <div class="page-template" role="main">
-    <!--breadcrumbs-->
-    <nav class="b-crumbs" itemprop='breadcrumb'>
-      <ul>
-        <li><a href="#" class="unit"></a></li>
-        <li><a href="#" class="unit"></a></li>
-      </ul>
-    </nav>
-
-    <!--main column with content-->
-    <div class="page-template__content"></div>
-    <!--end main column with content-->
-
-    <!--left sidebar-->
-    <aside class="page-template-sidebar_lt" itemscope itemtype='http://schema.org/WPSideBar'></aside>
-    <!--end left sidebar-->
-
-    <!--right sidebar-->
-    <aside class="page-template-sidebar_rt" itemscope itemtype='http://schema.org/WPSideBar'></aside>
-    <!--end right sidebar-->
-
+  <div class="page-index" role="main">
+    <!--special offers-->
+    <div class="page-index__specialOffers">
+      <header class="title"><span class="title__content">Спецпредложения</span></header>
+      <div class="jList">
+        <!--one offer-->
+        <a href="#" class="unit">
+          <img src="images/tmp/page-sidebar__special_offer__unit-2.png" alt="">
+          <span class="unit__content">
+            <span class="unit__name">Zenith Grande Class Traveller Multicity Super Gold</span>
+            <span class="unit__price"><span class="content">10 500 $</span></span>
+          </span>
+        </a>
+        <!--one offer-->
+        <a href="#" class="unit">
+          <img src="images/tmp/page-sidebar__special_offer__unit-2.png" alt="">
+          <span class="unit__content">
+            <span class="unit__name">Zenith Grande</span>
+            <span class="unit__price"><span class="content">40 500 $</span></span>
+          </span>
+        </a>
+        <!--one offer-->
+        <a href="#" class="unit">
+          <img src="images/tmp/page-sidebar__special_offer__unit-2.png" alt="">
+          <span class="unit__content">
+            <span class="unit__name">Zenith Grande Class Traveller Multicity</span>
+            <span class="unit__price"><span class="content">88 500 $</span></span>
+          </span>
+        </a>
+        <!--one offer-->
+        <a href="#" class="unit">
+          <img src="images/tmp/page-sidebar__special_offer__unit-2.png" alt="">
+          <span class="unit__content">
+            <span class="unit__name">Zenith Grande Class Traveller Multicity</span>
+            <span class="unit__price"><span class="content">10 500 $</span></span>
+          </span>
+        </a>
+      </div>
+    </div>
+    <!--promo block-->
+    <div class="page-index__promo">
+      <!--slogan-->
+      <div class="slogan"><span class="slogan__content">Только лучшие часы из Швейцарии.</span></div>
+      <a href="#" class="videoblog__link">Видео блог</a>
+      <!--news block-->
+      <div class="news">
+        <!--the new-->
+        <article class="news__unit">
+          <div class="news__unit__image">
+            <img src="images/tmp/page-index__promo__news__image.png">
+          </div>
+          <div class="news__unit__content">
+            <time datetime="2012-12-21">21 января</time>
+            <p>Мы ждали <a href="#">три месяца</a> и вот наконец-то, появились в наличии редкие Ulysse Nardin Hammer Head Shark в титане и Ulysse Nardin Hammer Head Shark, титан + золото.</p>
+          </div>
+        </article>
+        <!--the new-->
+        <article class="news__unit">
+          <div class="news__unit__image">
+            <img src="images/tmp/page-index__promo__news__image.png">
+          </div>
+          <div class="news__unit__content">
+            <time datetime="2012-12-21">21 января</time>
+            <p>Мы ждали <a href="#">три месяца</a> и вот наконец-то, </p>
+          </div>
+        </article>
+        <!--the new-->
+        <article class="news__unit">
+          <div class="news__unit__image"></div>
+          <div class="news__unit__content">
+            <time datetime="2012-12-21">21 января</time>
+            <p>Мы ждали <a href="#">три месяца</a> и вот наконец-то, появились в наличии редкие Ulysse Nardin Hammer Head Shark в титане и Ulysse Nardin Hammer Head Shark, титан + золото.</p>
+          </div>
+        </article>
+      </div>
+      <a href="#" class="newsArchive__link">Архив новостей</a>
+    </div>
+    <div class="jList_top">
+      <!--product block-->
+      <section class="page-index__product" itemscope itemtype='http://schema.org/Product'>
+        <img src="images/tmp/page-index__product__photo.png" alt="" itemprop='image'>
+        <div class="content">
+          <!--header-->
+          <header class="title">
+            <span class="brand" itemprop='brand'>Patek Philippe</span>
+            <span class="name" itemprop='name'> Aquanaut</span>
+          </header>
+          <!--product info-->
+          <dl class="info">
+            <dt>Модификация</dt>
+            <dd>263-92-3C</dd>
+            <dt>Серия</dt>
+            <dd itemprop='model'>Marine Diver</dd>
+            <dt>Размер</dt>
+            <dd>45,8 мм</dd>
+            <dt>Материал</dt>
+            <dd>сталь/каучук</dd>
+          </dl>
+          <!--aviability-->
+          <div class="availability">
+            <p>В наличии в нашем швейцарском офисе.
+            <p>Доставим в Москву в течение 7—12 дней.
+          </div>
+          <!--price-->
+          <div class="hList">
+            <!--price-->
+            <span class="price">7 800 $</span>
+            <!--buy button-->
+            <a href="#" class="buy">Купить</a>
+            <!--add to favorites-->
+            <a href="#" class="favorites__large"></a>
+          </div>
+          <!--description-->
+          <div class="description">
+            Новые, в коробке. Есть документы и гарантия.
+            Запас хода 42 часа. Ремешок резиновый с керамическими элементами. Корпус выполнен из стали с матовым черным резиновым покрытием, напоминающую фактуру волн. Раскладывающаяся застежка.
+          </div>
+        </div>
+      </section>
+      <!--about us-->
+      <section class="page-index__aboutUs">
+        <header class="title">О нас</header>
+        <div class="defaultCss">
+          <p>
+            Мы — небольшая семейная фирма находящаяся
+            в Цюрихе. Наш основной профиль — продажа ограненных бриллиантов и ювелирных изделий, однако, уже ровно год мы рады предложить нашим клиентам из России
+            и СНГ лучшие швейцарские часы.
+          </p>
+          <p>
+            С мая 2008 года полноценно предоставляем услуги
+            в Москве: продажа, заказ, обмен, ремонт, trade-in швейцарских часов. Мы не содержим штат бездумных менеджеров и продавцов, которым безразличны вещи, которые они продают и люди приобретающие эти вещи, многие из наших клиентов становятся нашими друзьями
+            и мы искренне рады этому.
+          </p>
+          <p>
+            Нам неинтересные непрофессионалы и люди,
+            не увлеченные своим делом. Поэтому сейчас мы можем предложить:
+          </p>
+          <ul>
+            <li>Лучшие цены;</li>
+            <li>Оперативную доставку (10—14 рабочих дней от даты заказа, в случае отсутствия нужной модели в Москве);</li>
+            <li>Квалифицированную и грамотную помощь в выборе часов;</li>
+            <li>Мы никогда не забываем о наших гостях, не ленимся звонить и держать в курсе исполнения заказа;</li>
+            <li>Гарантированно отвечаем в течении 24 часов на любой запрос;</li>
+            <li>Мы понимаем важность гарантийного и постгарантийного сервиса, поэтому наш клиент, никогда не окажется без квалифицированной поддержки.</li>
+          </ul>
+          <p>Мы хорошо знаем, что такое страсть. Страсть. К часам. Поэтому всегда открыты к предложениям, и готовы делать хорошие скидки.</p>
+        </div>
+      </section>
+    </div>
   </div><!--END page template-->
 
   <div class="help-footer_block"></div>
@@ -70,27 +254,48 @@
 
 <!-- FOOTER -->
 <footer class="page-footer" itemscope itemtype='http://schema.org/WPFooter'>
-  <!--logo-->
-  <a class="page-footer__logo" href="index.html" itemprop='url'>
-    <img src="images/logo.png" alt="" itemprop='image'>
-    <span class="name" itemprop="name"></span>
-  </a>
-  <!--copy-->
-  <small class="page-footer__copy"></small>
-  <!--navigation-->
-  <nav class="page-footer__nav" itemscope itemtype='http://schema.org/SiteNavigationElement'>
-    <ul>
-      <li><a href="#" class="unit"></a></li>
-      <li><a href="#" class="unit"></a></li>
-    </ul>
-  </nav>
+  <div class="page-footer__content">
+    <!--social-->
+    <div class="page-footer__social">
+      <div class="unit fb">Facebook</div>
+      <div class="unit vk">Vkontakte</div>
+      <div class="unit twt">Twitter</div>
+    </div>
+    <!--copyright-->
+    <small class="page-footer__copy">
+      <span class="url">Watcharena.ru</span>
+      <span class="years">2007-2012</span>
+    </small>
+    <!--helpfull links-->
+    <div class="page-footer__helpLinks">
+      <a href="#" class="unit">Оплата и доставка</a>
+      <a href="#" class="unit">Написать нам</a>
+    </div>
+    <!--telephone-->
+    <address class="page-footer__telephone">
+      <div class="jList">
+        <span class="telephone" itemprop='telephone'>+7 (495) 410-92-84</span>
+        <span class="openingHours" itemprop='openingHours'>12:00—20:00</span>
+      </div>
+      <div class="jList">
+        <span class="telephone" itemprop='telephone'>+41 (43) 500-61-18</span>
+        <span class="openingHours" itemprop='openingHours'>10:00—17:00</span>
+      </div>
+    </address>
+    <!--search-->
+    <form class="page-footer__search">
+      <input type="search" placeholder="Поиск">
+      <button type="submit"></button>
+    </form>
+  </div>
 </footer>
 <!-- END FOOTER -->
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-<!--<script src="js/vendor/jquery.columnizer.min.js"></script>-->
+<script src="js/vendor/jquery.columnizer.min.js"></script>
+<script src="js/plugins/placeholder-min.js"></script>
 <script src="js/main.js"></script>
 
 <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
