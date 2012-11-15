@@ -3,7 +3,7 @@
 <!--[if IE 8]> <html class="ie ie987 ie87 ie8" lang="en"> <![endif]-->
 <!--[if IE 9]> <html class="ie ie987 ie9" lang="en"> <![endif]-->
 <!--[if IE 10]> <html class="ie ie10" lang="en"> <![endif]-->
-<html class="no-js" lang="en">
+<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -59,9 +59,9 @@
       </div>
       <!--user block-->
       <div class="page-header__user">
-        <a href="#" class="login">Войти</a>
+        <a href="#" rel="#popup-login" class="login popup-login__trigger">Войти</a>
         или
-        <a href="#" class="register">Зарегистрироваться</a>
+        <a href="#" rel="#popup-tabs" class="register popup-tabs__trigger">Зарегистрироваться</a>
       </div>
     </div>
     <!--bottom header part-->
@@ -92,7 +92,7 @@
           <span class="telephone" itemprop='telephone'>+41 (43) 500-61-18</span>
           <span class="openingHours" itemprop='openingHours'>10:00—17:00</span>
         </div>
-        <a href="#" class="link">Не смогли дозвониться?</a>
+        <a href="#" class="link popup-shopcart__trigger" rel="#popup-shopcart">Не смогли дозвониться?</a>
       </address>
     </div>
   </header><!--END HEADER-->
@@ -107,6 +107,8 @@
     <!--main header-->
     <!--**-->
     <header class="page-template__title">Заголово</header>
+    <a href="#" rel="#popup-search" class="search_link popup-search__trigger">Поиск модели</a>
+
   </div><!--END page template-->
 
   <!--left sidebar-->
@@ -207,14 +209,372 @@
       <button type="submit"></button>
     </form>
   </div>
+  <a href="#" class="page-footer__creator"><span>Incredible<br> Artstudio</span><sup>2012</sup></a>
 </footer>
 <!-- END FOOTER -->
+
+<!--popup-login -->
+<form class="page-popup popup-login" id="popup-login">
+  <a href="#" class="close"></a>
+  <input type="text" placeholder="Логин">
+  <input type="password" placeholder="Пароль">
+  <a href="#" class="password_visible"></a>
+  <a href="#" class="forgot_password">Забыли пароль?</a>
+  <label>
+    <input type="checkbox">
+    <span>Запомнить меня</span>
+  </label>
+  <button type="submit">Войти</button>
+</form>
+<!--popup with tabs-->
+<div class="page-popup popup-tabs" id="popup-tabs">
+  <a href="#" class="close"></a>
+  <header class="popup-tabs__header">
+    <a href="#" class="unit current">Регистрация</a>
+    или
+    <a href="#" class="unit">Быстрое оформление</a>
+  </header>
+  <div class="popup-tabs__content">
+    <!--registration-->
+    <form class="popup-tabs__registration">
+      <input class="input__width_140" type="text" placeholder="Логин">
+      <input class="input__width_140" type="password" placeholder="Пароль">
+      <a href="#" class="password_visible"></a>
+      <div class="spacer"></div>
+      <input class="input__width_175" type="text" placeholder="Имя">
+      <input class="input__width_175" type="text" placeholder="Фамилия">
+      <input class="input__width_210" type="email" placeholder="Электронная почта">
+      <label>
+        <input type="checkbox">
+        <span>Подписаться на новости</span>
+      </label>
+      <div>
+        <input type="text" placeholder="Мобильный">
+        <input type="text" placeholder="Домашний">
+      </div>
+      <div>
+        <input type="text" placeholder="Страна">
+        <input type="text" placeholder="Город">
+      </div>
+      <textarea placeholder="Адрес, куда доставит посылку наш курьер."></textarea>
+      <button class="button" type="submit">Зарегистрироваться</button>
+    </form>
+    <!--purchase-->
+    <form class="popup-tabs__purchase">
+      <input class="input__width_175" type="text" placeholder="Ваше имя">
+      <input class="input__width_175" type="text" placeholder="Фамилия">
+      <div>
+        <input class="input__width_210" type="email" placeholder="Электронная почта">
+      </div>
+      <input type="text" placeholder="Ваш мобильный">
+      <input type="text" placeholder="Домашний">
+      <div class="dotted_line"></div>
+      <input class="input__width_175" type="text" placeholder="Имя получателя">
+      <input class="input__width_175" type="text" placeholder="Фамилия">
+      <input type="text" placeholder="В какую страну">
+      <input type="text" placeholder="Город">
+      <textarea placeholder="Адрес, куда доставит посылку наш курьер."></textarea>
+      <button type="submit" class="button">Оформить</button>
+    </form>
+  </div>
+</div>
+<!--popup-shopcart -->
+<div class="page-popup popup-shopcart" id="popup-shopcart">
+  <a href="#" class="close"></a>
+  <header class="popup-shopcart__header">
+    <h1 class="title">Недавно добавленные</h1>
+    <a class="clear_list" href="#">очистить список</a>
+  </header>
+  <div class="popup-shopcart__content">
+    <table class="popup-shopcart__table">
+      <tbody>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--popup-search -->
+<form class="page-popup popup-search" id="popup-search">
+  <h1 class="title">Найти модели часов</h1>
+  <a href="#" class="close"></a>
+  <div class="range">
+    <span class="range__label_first">Стоимостью от</span>
+    <input type="text" class="range__indicator" id="minCost" value="3000"/>
+    <input type="text" class="range__indicator" id="maxCost" value="273000"/>
+    <div class="range__input" id="range__input"></div>
+    <span class="range__label_second">до</span>
+  </div>
+  <dl>
+    <dt class="currency__title">Валюта</dt>
+    <dd class="currency__content">
+      <a href="#">$</a>
+      <a href="#">€</a>
+      <a href="#">R</a>
+    </dd>
+    <dt class="sex__title">Часы</dt>
+    <dd class="sex__content">
+      <a href="#">для него</a>
+      <a href="#">для неe</a>
+      <a href="#">юнисекс</a>
+    </dd>
+  <br>
+    <dt class="brands__title">Марки</dt>
+    <dd class="brands__content">
+      <ul>
+        <li><a href="#">A. Lange & Sohne</a></li>
+        <li><a href="#">Audemars Piguet</a></li>
+        <li><a href="#">Blancpain</a></li>
+        <li><a href="#">Bovet</a></li>
+        <li><a href="#">Bell & Ross</a></li>
+        <li><a href="#">Breguet</a></li>
+        <li><a href="#">Chopard</a></li>
+        <li><a href="#">CVSTOS</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Corum</a></li>
+        <li><a href="#">De Bethune</a></li>
+        <li><a href="#">De Grisogono</a></li>
+        <li><a href="#">Devon</a></li>
+        <li><a href="#">DeWitt</a></li>
+        <li><a href="#">Franc Vila</a></li>
+        <li><a href="#">Girard-Perregaux</a></li>
+        <li><a href="#">Glashutte Original</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Greubel Forsey</a></li>
+        <li><a href="#">Jaeger LeCoultre</a></li>
+        <li><a href="#">Jaquet Droz</a></li>
+        <li><a href="#">Hautlence</a></li>
+        <li><a href="#">Hublot</a></li>
+        <li><a href="#">HYT</a></li>
+        <li><a href="#">IWC</a></li>
+        <li><a href="#">Maitres du temps</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Maurice Lacroix</a></li>
+        <li><a href="#">MB&F</a></li>
+        <li><a href="#">MCT</a></li>
+        <li><a href="#">Patek Philippe</a></li>
+        <li><a href="#">Piaget</a></li>
+        <li><a href="#">Richard Mille</a></li>
+        <li><a href="#">Rolex</a></li>
+        <li><a href="#">Romain Jerome</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Tag Heuer</a></li>
+        <li><a href="#">Ulysse Nardin</a></li>
+        <li><a href="#">Urwerk</a></li>
+        <li><a href="#">Vacheron Constantin</a></li>
+        <li><a href="#">Zenith</a></li>
+      </ul>
+    </dd>
+  <br>
+    <dt class="mechanism__title">Механизм</dt>
+    <dd class="mechanism__content">
+      <a href="#">механический</a>
+      <a href="#">кварцевый</a>
+      <a href="#">электронный</a>
+      <a href="#">кинетик</a>
+    </dd>
+  <br>
+    <dt class="functionality__title">Навороты</dt>
+    <dd class="functionality__content">
+      <ul>
+        <li><a href="#">без них</a></li>
+        <li><a href="#" class="invisible">help link</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">репетир</a></li>
+        <li><a href="#">ретроград</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">дуалтайм</a></li>
+        <li><a href="#">турбийон</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">лунный календарь</a></li>
+        <li><a href="#">вечный календарь</a></li>
+      </ul>
+  </dd>
+  <br>
+    <dt class="strap__title">Ремешок</dt>
+    <dd class="strap__content">
+      <a href="#">
+        <img src="images/popup-search__strap-1.png" alt="">
+        <span>одноцветный<br> браслет</span>
+      </a>
+      <a href="#" class="current">
+        <img src="images/popup-search__strap-2.png" alt="">
+        <span>многоцветный<br> браслет</span>
+      </a>
+      <a href="#">
+        <img src="images/popup-search__strap-3.png" alt="">
+        <span>кожаный<br> ремешок</span>
+      </a>
+    </dd>
+  <br>
+    <dt class="material__title">Материал корпуса</dt>
+    <dd class="material__content">
+      <ul>
+        <li><a href="#">сталь</a></li>
+        <li><a href="#">карбон</a></li>
+        <li><a href="#">серебро</a></li>
+        <li><a href="#">титан</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">желтое золото</a></li>
+        <li><a href="#" class="current">белое золото</a></li>
+        <li><a href="#">красное золото</a></li>
+        <li><a href="#">розовое золото</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">пластик</a></li>
+        <li><a href="#">платина</a></li>
+        <li><a href="#">комбинированный корпус</a></li>
+      </ul>
+    </dd>
+    <dt class="order__title">Показать модели</dt>
+    <dd class="order__content">
+      <ul>
+        <li><a href="#">по наименованию</a></li>
+        <li><a href="#">по цене</a></li>
+        <li><a href="#">по наличию</a></li>
+      </ul>
+    </dd>
+  </dl>
+  <button type="submit" class="button">Найти</button>
+</form>
 
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
-<script src="js/vendor/jquery.columnizer.min.js"></script>
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
 <script src="js/plugins/placeholder-min.js"></script>
+<script src="js/plugins/jquery.selectBox.min.js"></script>
+<script src="js/vendor/jquery.columnizer.min.js"></script>
+<script src="js/plugins/jquery.mousewheel.js"></script>
+<script src="js/plugins/mwheelIntent.js"></script>
+<script src="js/plugins/jquery.jscrollpane.min.js"></script>
+<script src="js/plugins/jquery.ui-slider.js"></script>
 <script src="js/main.js"></script>
 
 <!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
