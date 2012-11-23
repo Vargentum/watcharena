@@ -1,0 +1,570 @@
+<!doctype html>
+<!--[if IE 7]> <html class="ie ie987 ie87 ie7" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="ie ie987 ie87 ie8" lang="en"> <![endif]-->
+<!--[if IE 9]> <html class="ie ie987 ie9" lang="en"> <![endif]-->
+<!--[if IE 10]> <html class="ie ie10" lang="en"> <![endif]-->
+<html class="no-js" lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <!--if you make responsive design - uncomment it-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <!--PT Sans-->
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <!--PT Serif-->
+  <link href='http://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
+  <!--CSS here-->
+  <link rel="stylesheet" href="stylesheets/screen.css">
+  <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+</head>
+<body itemscope itemtype='http://schema.org/WebPage'>
+<!--[if lt IE 9]><p class=chromeframe>Внимание! Вы используете <em>устаревший браузер!</em> Страница может загружаться долго, а часть элементов сайта выводится в упрощенном виде. Чтобы увидеть полноценную версию сайта - <a href="http://browsehappy.com/">установите новый современный браузер</a> - это увеличит скорость загрузки страниц в несколько раз, или <a href="http://www.google.com/chromeframe/?redirect=true">установите расширение Google Chrome Frame для Internet Explorer</a> - это позволит вам увеличить скорость загрузки страниц не покидая браузер.</p><![endif]-->
+
+<!-- WRAPPER -->
+<div class="page-body">
+
+  <!-- HEADER -->
+  <header class="page-header" itemscope itemtype='http://schema.org/Store'>
+    <!--top header part-->
+    <div class="page-header__top">
+      <!--lang choise-->
+      <div class="page-header__lang">
+        <a href="#" class="unit unit-1">English</a>
+        <a href="#" class="unit unit-2">Russian</a>
+      </div>
+      <!--warranty-->
+      <a href="#" class="page-header__warranty">Гарантия и оригинальность</a>
+      <!--currency choise-->
+      <div class="page-header__currency">
+        <span class="content">Цены в</span>
+        <select>
+          <option>$</option>
+          <option>€</option>
+          <option>Р</option>
+        </select>
+      </div>
+      <!--search-->
+      <form class="page-header__search">
+        <input type="search" placeholder="Поиск">
+        <button type="submit"></button>
+      </form>
+      <div class="hList">
+        <!--favorites-->
+        <a href="#" class="page-header__favorites">118</a>
+        <!--purchases-->
+        <a href="#" class="page-header__purchases">57</a>
+      </div>
+      <!--user block-->
+      <div class="page-header__user">
+        <a href="#" rel="#popup-login" class="login popup-login__trigger">Войти</a>
+        или
+        <a href="#" rel="#popup-tabs" class="register popup-tabs__trigger">Зарегистрироваться</a>
+      </div>
+    </div>
+    <!--bottom header part-->
+    <div class="page-header__bottom">
+      <!--logo-->
+      <a class="page-header__logo" href="index.html" itemprop='url'>
+        <img src="images/header__logo.png" alt="" itemprop='image'>
+        <span class="name" itemprop="name">WatchArena</span>
+      </a>
+      <!--navigation-->
+      <nav class="page-header__nav" itemscope itemtype='http://schema.org/SiteNavigationElement'>
+        <ul class="columnize_2">
+          <li><a href="#" class="unit">Главная</a></li>
+          <li><a href="#" class="unit current">Спецпредложения</a></li>
+          <li><a href="#" class="unit">Часы</a></li>
+          <li><a href="#" class="unit">Часы б/у</a></li>
+          <li><a href="#" class="unit">Блог</a></li>
+          <li><a href="#" class="unit">Связь с нами</a></li>
+        </ul>
+      </nav>
+      <!--contacts-->
+      <address class="page-header__contacts">
+        <div class="jList">
+          <span class="telephone" itemprop='telephone'>+7 (495) 410-92-84</span>
+          <span class="openingHours" itemprop='openingHours'>12:00—20:00</span>
+        </div>
+        <div class="jList">
+          <span class="telephone" itemprop='telephone'>+41 (43) 500-61-18</span>
+          <span class="openingHours" itemprop='openingHours'>10:00—17:00</span>
+        </div>
+        <a href="#" class="link popup-shopcart__trigger" rel="#popup-shopcart">Не смогли дозвониться?</a>
+      </address>
+    </div>
+  </header><!--END HEADER-->
+
+  <div class="page-template__wrapper">
+    <!--START page template-->
+    <div class="page-cabinet" role="main">
+      <!--main header-->
+      <header class="page-template__title">История заказов</header>
+      <!--nav-->
+      <ul class="page-cabinet__nav">
+        <li><a href="#" class="unit current">Мой счет</a></li>
+        <li><a href="#" class="unit">Информация обо мне</a></li>
+        <li><a href="#" class="unit">История заказов</a></li>
+        <li><a href="#" class="unit">Адресная книга</a></li>
+        <li><a href="#" class="unit">История посещений</a></li>
+      </ul>
+      <table class="page-cabinet__purchase_history">
+        <tr>
+          <th><span>#</span></th>
+          <th><span>Время заказа</span></th>
+          <th><span>Статус</span></th>
+          <th><span>Заказанные часы</span></th>
+          <th><span>Оплата</span></th>
+          <th><span>Доставка</span></th>
+          <th><span>Стоимость</span></th>
+        </tr>
+        <tr>
+          <td>6871047</td>
+          <td>03.11.09 11:12</td>
+          <td class="status__completed"></td>
+          <td>Vacheron Constantin Patrimony Bi-Retrograde Day & Day</td>
+          <td class="payment__card"></td>
+          <td>Cамовывоз</td>
+          <td>1 100 500 P</td>
+        </tr>
+        <tr>
+          <td>543</td>
+          <td>11.11.09 11:12</td>
+          <td class="status__canceled"></td>
+          <td>Bi-Retrograde Day & Day</td>
+          <td class="payment__cash"></td>
+          <td>Курьером</td>
+          <td>100 500 $</td>
+        </tr>
+        <tr>
+          <td>543</td>
+          <td>11.11.09 11:12</td>
+          <td class="status__novelty"></td>
+          <td>Bi-Retrograde Day & Day</td>
+          <td class="payment__cash"></td>
+          <td>Курьером</td>
+          <td>100 500 $</td>
+        </tr>
+      </table>
+    </div><!--END page template-->
+
+  </div><!--END page-template__wrapper-->
+</div><!-- END page-body -->
+
+<!-- FOOTER -->
+<footer class="page-footer" itemscope itemtype='http://schema.org/WPFooter'>
+  <div class="page-footer__content">
+    <!--social-->
+    <div class="page-footer__social">
+      <div class="unit fb">Facebook</div>
+      <div class="unit vk">Vkontakte</div>
+      <div class="unit twt">Twitter</div>
+    </div>
+    <!--copyright-->
+    <small class="page-footer__copy">
+      <span class="url">Watcharena.ru</span>
+      <span class="years">2007-2012</span>
+    </small>
+    <!--helpfull links-->
+    <div class="page-footer__helpLinks">
+      <a href="#" class="unit">Оплата и доставка</a>
+      <a href="#" class="unit">Написать нам</a>
+    </div>
+    <!--telephone-->
+    <address class="page-footer__telephone">
+      <div class="jList">
+        <span class="telephone">+7 (495) 410-92-84</span>
+        <span class="openingHours">12:00—20:00</span>
+      </div>
+      <div class="jList">
+        <span class="telephone">+41 (43) 500-61-18</span>
+        <span class="openingHours">10:00—17:00</span>
+      </div>
+    </address>
+    <!--search-->
+    <form class="page-footer__search">
+      <input type="search" placeholder="Поиск">
+      <button type="submit"></button>
+    </form>
+  </div>
+  <a href="#" class="page-footer__creator"><span>Incredible<br> Artstudio</span><sup>2012</sup></a>
+</footer>
+<!-- END FOOTER -->
+
+<!--popup-login -->
+<form class="page-popup popup-login" id="popup-login">
+  <a href="#" class="close"></a>
+  <input type="text" placeholder="Логин">
+  <input type="password" placeholder="Пароль">
+  <a href="#" class="password_visible"></a>
+  <a href="#" class="forgot_password">Забыли пароль?</a>
+  <label>
+    <input type="checkbox">
+    <span>Запомнить меня</span>
+  </label>
+  <button type="submit">Войти</button>
+</form>
+<!--popup with tabs-->
+<div class="page-popup popup-tabs" id="popup-tabs">
+  <a href="#" class="close"></a>
+  <header class="popup-tabs__header">
+    <a href="#" class="unit current">Регистрация</a>
+    или
+    <a href="#" class="unit">Быстрое оформление</a>
+  </header>
+  <div class="popup-tabs__content">
+    <!--registration-->
+    <form class="popup-tabs__registration">
+      <input class="input__width_140" type="text" placeholder="Логин">
+      <input class="input__width_140" type="password" placeholder="Пароль">
+      <a href="#" class="password_visible"></a>
+      <div class="spacer"></div>
+      <input class="input__width_175" type="text" placeholder="Имя">
+      <input class="input__width_175" type="text" placeholder="Фамилия">
+      <input class="input__width_210" type="email" placeholder="Электронная почта">
+      <label>
+        <input type="checkbox">
+        <span>Подписаться на новости</span>
+      </label>
+      <div>
+        <input type="text" placeholder="Мобильный">
+        <input type="text" placeholder="Домашний">
+      </div>
+      <div>
+        <input type="text" placeholder="Страна">
+        <input type="text" placeholder="Город">
+      </div>
+      <textarea placeholder="Адрес, куда доставит посылку наш курьер."></textarea>
+      <button class="button" type="submit">Зарегистрироваться</button>
+    </form>
+    <!--purchase-->
+    <form class="popup-tabs__purchase">
+      <input class="input__width_175" type="text" placeholder="Ваше имя">
+      <input class="input__width_175" type="text" placeholder="Фамилия">
+      <div>
+        <input class="input__width_210" type="email" placeholder="Электронная почта">
+      </div>
+      <input type="text" placeholder="Ваш мобильный">
+      <input type="text" placeholder="Домашний">
+      <div class="dotted_line"></div>
+      <input class="input__width_175" type="text" placeholder="Имя получателя">
+      <input class="input__width_175" type="text" placeholder="Фамилия">
+      <input type="text" placeholder="В какую страну">
+      <input type="text" placeholder="Город">
+      <textarea placeholder="Адрес, куда доставит посылку наш курьер."></textarea>
+      <button type="submit" class="button">Оформить</button>
+    </form>
+  </div>
+</div>
+<!--popup-shopcart -->
+<div class="page-popup popup-shopcart" id="popup-shopcart">
+  <a href="#" class="close"></a>
+  <header class="popup-shopcart__header">
+    <h1 class="title">Недавно добавленные</h1>
+    <a class="clear_list" href="#">очистить список</a>
+  </header>
+  <div class="popup-shopcart__content">
+    <table class="popup-shopcart__table">
+      <tbody>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Zenith Grande Class Traveller Multicity</a></td>
+        <td><span class="popup-shopcart__price">11 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      <tr>
+        <td><img src="images/tmp/popup-shopcart__table__img-1.png" alt=""></td>
+        <td><a href="#">Ulysse Nardin El Toro</a></td>
+        <td><span class="popup-shopcart__price">7 300 $</span></td>
+        <td><a href="#" class="table__close">✕</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!--popup-search -->
+<form class="page-popup popup-search" id="popup-search">
+  <h1 class="title">Найти модели часов</h1>
+  <a href="#" class="close"></a>
+  <div class="range">
+    <span class="range__label_first">Стоимостью от</span>
+    <input type="text" class="range__indicator" id="minCost" value="3000"/>
+    <input type="text" class="range__indicator" id="maxCost" value="273000"/>
+    <div class="range__input" id="range__input"></div>
+    <span class="range__label_second">до</span>
+  </div>
+  <dl>
+    <dt class="currency__title">Валюта</dt>
+    <dd class="currency__content">
+      <a href="#">$</a>
+      <a href="#">€</a>
+      <a href="#">R</a>
+    </dd>
+    <dt class="sex__title">Часы</dt>
+    <dd class="sex__content">
+      <a href="#">для него</a>
+      <a href="#">для неe</a>
+      <a href="#">юнисекс</a>
+    </dd>
+    <br>
+    <dt class="brands__title">Марки</dt>
+    <dd class="brands__content">
+      <ul>
+        <li><a href="#">A. Lange & Sohne</a></li>
+        <li><a href="#">Audemars Piguet</a></li>
+        <li><a href="#">Blancpain</a></li>
+        <li><a href="#">Bovet</a></li>
+        <li><a href="#">Bell & Ross</a></li>
+        <li><a href="#">Breguet</a></li>
+        <li><a href="#">Chopard</a></li>
+        <li><a href="#">CVSTOS</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Corum</a></li>
+        <li><a href="#">De Bethune</a></li>
+        <li><a href="#">De Grisogono</a></li>
+        <li><a href="#">Devon</a></li>
+        <li><a href="#">DeWitt</a></li>
+        <li><a href="#">Franc Vila</a></li>
+        <li><a href="#">Girard-Perregaux</a></li>
+        <li><a href="#">Glashutte Original</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Greubel Forsey</a></li>
+        <li><a href="#">Jaeger LeCoultre</a></li>
+        <li><a href="#">Jaquet Droz</a></li>
+        <li><a href="#">Hautlence</a></li>
+        <li><a href="#">Hublot</a></li>
+        <li><a href="#">HYT</a></li>
+        <li><a href="#">IWC</a></li>
+        <li><a href="#">Maitres du temps</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Maurice Lacroix</a></li>
+        <li><a href="#">MB&F</a></li>
+        <li><a href="#">MCT</a></li>
+        <li><a href="#">Patek Philippe</a></li>
+        <li><a href="#">Piaget</a></li>
+        <li><a href="#">Richard Mille</a></li>
+        <li><a href="#">Rolex</a></li>
+        <li><a href="#">Romain Jerome</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">Tag Heuer</a></li>
+        <li><a href="#">Ulysse Nardin</a></li>
+        <li><a href="#">Urwerk</a></li>
+        <li><a href="#">Vacheron Constantin</a></li>
+        <li><a href="#">Zenith</a></li>
+      </ul>
+    </dd>
+    <br>
+    <dt class="mechanism__title">Механизм</dt>
+    <dd class="mechanism__content">
+      <a href="#">механический</a>
+      <a href="#">кварцевый</a>
+      <a href="#">электронный</a>
+      <a href="#">кинетик</a>
+    </dd>
+    <br>
+    <dt class="functionality__title">Навороты</dt>
+    <dd class="functionality__content">
+      <ul>
+        <li><a href="#">без них</a></li>
+        <li><a href="#" class="invisible">help link</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">репетир</a></li>
+        <li><a href="#">ретроград</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">дуалтайм</a></li>
+        <li><a href="#">турбийон</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">лунный календарь</a></li>
+        <li><a href="#">вечный календарь</a></li>
+      </ul>
+    </dd>
+    <br>
+    <dt class="strap__title">Ремешок</dt>
+    <dd class="strap__content">
+      <a href="#">
+        <img src="images/popup-search__strap-1.png" alt="">
+        <span>одноцветный<br> браслет</span>
+      </a>
+      <a href="#" class="current">
+        <img src="images/popup-search__strap-2.png" alt="">
+        <span>многоцветный<br> браслет</span>
+      </a>
+      <a href="#">
+        <img src="images/popup-search__strap-3.png" alt="">
+        <span>кожаный<br> ремешок</span>
+      </a>
+    </dd>
+    <br>
+    <dt class="material__title">Материал корпуса</dt>
+    <dd class="material__content">
+      <ul>
+        <li><a href="#">сталь</a></li>
+        <li><a href="#">карбон</a></li>
+        <li><a href="#">серебро</a></li>
+        <li><a href="#">титан</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">желтое золото</a></li>
+        <li><a href="#" class="current">белое золото</a></li>
+        <li><a href="#">красное золото</a></li>
+        <li><a href="#">розовое золото</a></li>
+      </ul>
+      <ul>
+        <li><a href="#">пластик</a></li>
+        <li><a href="#">платина</a></li>
+        <li><a href="#">комбинированный корпус</a></li>
+      </ul>
+    </dd>
+    <dt class="order__title">Показать модели</dt>
+    <dd class="order__content">
+      <ul>
+        <li><a href="#">по наименованию</a></li>
+        <li><a href="#">по цене</a></li>
+        <li><a href="#">по наличию</a></li>
+      </ul>
+    </dd>
+  </dl>
+  <button type="submit" class="button">Найти</button>
+</form>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+<script src="http://cdn.jquerytools.org/1.2.7/full/jquery.tools.min.js"></script>
+<script src="js/plugins/placeholder-min.js"></script>
+<script src="js/plugins/jquery.selectBox.min.js"></script>
+<script src="js/vendor/jquery.columnizer.min.js"></script>
+<script src="js/plugins/jquery.mousewheel.js"></script>
+<script src="js/plugins/mwheelIntent.js"></script>
+<script src="js/plugins/jquery.jscrollpane.min.js"></script>
+<script src="js/plugins/jquery.ui-slider.js"></script>
+<script src="js/main.js"></script>
+
+<!-- Asynchronous Google Analytics snippet. Change UA-XXXXX-X to be your site's ID.
+mathiasbynens.be/notes/async-analytics-snippet -->
+<script>
+  var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+  (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+</body>
+</html>
