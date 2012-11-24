@@ -582,6 +582,8 @@ body {
   margin: 7px 0 20px;
 }
 .page-template__crumbs{
+  z-index: 2;
+  position:relative;
   .unit{
     @include link-simple-colors(#989898, $linkHoverColor);
     font-size: 13px;
