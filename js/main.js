@@ -27,16 +27,15 @@ $(function(){
         $('.page-template').css('height', pageSidebarHeight);
     }
 
-//    $('.page-sidebar', '.page-template').css('height', pageTemplateHeight);
 
-    $('.popup-login__trigger, .popup-tabs__trigger, .popup-search__trigger').overlay({
+    $('.popup__trigger, .popup-login__trigger, .popup-tabs__trigger, .popup-search__trigger').overlay({
         mask: {
             color: '#000',
             loadSpeed: 200,
             opacity: 0.44
         }
     });
-    $('.popup-shopcart__trigger').overlay({
+    $('.popup-shopcart__trigger, .popup-purchase__trigger').overlay({
         mask: {
             color: '#000',
             loadSpeed: 200
